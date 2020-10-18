@@ -1,6 +1,4 @@
-
 public final class Stream {
-
     /** Output a message. */
     public static void output(String msg) {
         int len = msg.length();
@@ -15,7 +13,7 @@ public final class Stream {
 
     /** Output a character. */
     public static void output(char c) {
-            System.out.write(c);
+        System.out.write(c);
     }
 
     /** Output a character ending with an end of line. */

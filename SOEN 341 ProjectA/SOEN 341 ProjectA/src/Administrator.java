@@ -26,7 +26,6 @@ public class Administrator implements iAdministrator {
     void getCommandName(String[] args) {
         commandName = args[0];
     }
-
     void getOptions(String[] args) {
         for (int n = 1; n < (args.length); ++n) {
             if (args[n] != null) {
@@ -53,14 +52,14 @@ public class Administrator implements iAdministrator {
         getFileNames(args);
     }
 
-    void Start() throws IOException {
+    public void Start() throws IOException {
         OptionFactory OF = new OptionFactory ();
         OF.getOptions(options);
 
         for (int i = 0; i < srcFilenames.size(); i++) {
             srcFile = new File(srcFilenames.get(i));
             if (!srcFile.canRead()) {
-                Stream.outputln("wc: Cannot open srcFile '" + srcFilenames.get(i) + "'");
+                System.out.println("wc: Cannot open srcFile '" + srcFilenames.get(i) + "'");
                 System.exit(0);
             }
 

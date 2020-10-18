@@ -1,16 +1,16 @@
 import java.util.*;
 
 public class OptionFactory {
-    iOptions createHelp() {
-        return new Help();
+    aOptions createHelp() {
+        return new Help ();
     }
-    iOptions createBanner() {
-        return new Banner();
+    aOptions createBanner() {
+        return new Banner ();
     }
-    iOptions createVerbose() {
-        return new Verbose();
+    aOptions createVerbose() {
+        return new Verbose ();
     }
-    iOptions getOptions(ArrayList<String> Options) {
+    aOptions getOptions(ArrayList<String> Options) {
         for (int i = 0; i < Options.size(); i++) {
             switch(Options.get(i)) {
                 case "-h":

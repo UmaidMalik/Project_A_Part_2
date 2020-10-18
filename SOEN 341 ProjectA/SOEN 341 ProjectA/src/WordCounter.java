@@ -1,6 +1,11 @@
 import java.io.*;
-public class WordCounter implements iCounter{
+public class WordCounter implements iCounter {
     WordCounter(File srcFile) throws IOException {
+        count (srcFile);
+    }
+
+    @Override
+    public void count(File srcFile) throws IOException {
         FileInputStream srcStream = new FileInputStream(srcFile);
         int  c;
         int  nWords = 0;
@@ -11,7 +16,7 @@ public class WordCounter implements iCounter{
                 if (!inWord) {
                     inWord = true;
                     ++nWords;
-                    if (Administrator.verboseActive) Stream.outputln('.');
+                    if (Administrator.verboseActive) System.out.print('.');
                 }
             } else {
                 inWord = false;
@@ -20,4 +25,5 @@ public class WordCounter implements iCounter{
         Stream.outputln("\nwordcount: " + nWords + " words in sourceFile " + srcFile.getName());
         srcStream.close();
     }
+
 }

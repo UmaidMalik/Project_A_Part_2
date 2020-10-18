@@ -1,7 +1,11 @@
-
 import java.io.*;
 public class CharCounter implements iCounter{
     CharCounter(File srcFile) throws IOException {
+        count (srcFile);
+    }
+
+    @Override
+    public void count(File srcFile) throws IOException {
         FileInputStream srcStream = new FileInputStream(srcFile);
         int c;
         int nChars = 0;
@@ -12,4 +16,5 @@ public class CharCounter implements iCounter{
         Stream.outputln("\ncharcount: " + nChars + " characters in sourceFile " + srcFile.getName());
         srcStream.close();
     }
+
 }
